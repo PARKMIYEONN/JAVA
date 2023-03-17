@@ -11,15 +11,28 @@ public class Byeol13 {
 		System.out.print("행 수 입력 : ");
 		int haeng = sc.nextInt();
 		
-		for(int i = 0; i <= haeng; i++) {
-			if(i < haeng/2) {
-				for(int j = 0; j <= haeng/2+1-i; j++) {
+		if(haeng % 2 == 0) {
+			haeng = haeng-1;
+		}
+		
+		for(int i = 1; i <= haeng; i++) {
+			if(i <= (haeng/2)+1) {
+				for(int j = 1; j <= haeng/2+1-i; j++) {
 					System.out.print(" ");
 					
 				}
-				for(int j = 0; j <= i; j++) {
+				for(int j = 1; j <= i; j++) {
 					System.out.print("*");
 				}
+				System.out.println();
+			} else {
+				for(int j = 1; j <= i - haeng/2-1; j++) {
+					System.out.print(" ");
+				}
+				for(int j = 1; j <= haeng+1-i; j++ ) {
+					System.out.print("*");
+				}
+				System.out.println();
 			}
 		}
 		
