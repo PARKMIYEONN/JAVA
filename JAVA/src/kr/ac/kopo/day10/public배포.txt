@@ -1,0 +1,3 @@
+project > Generate Javadoc
+
+-locale ko_KR -encoding utf-8 -charset utf-8 -docencoding utf-8

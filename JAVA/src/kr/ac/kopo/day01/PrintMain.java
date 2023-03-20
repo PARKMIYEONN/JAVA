@@ -20,7 +20,7 @@ public class PrintMain {
 		System.out.print(' ');
 		System.out.println("홍길동");
 		System.out.print('홍');
-		System.out.print('홍');
+		System.out.print('\n');
 		System.out.print("A\n");
 		//방법3
 		System.out.print('A');
