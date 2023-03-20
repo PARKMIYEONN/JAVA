@@ -176,8 +176,44 @@ public class StringUtil {
 //    검색할 문자열 입력 : ld
 //    ld로 끝나는지 여부 판단 : true		
 	
+	boolean endsWith() {
+		
+		Scanner sc = new Scanner(System.in);
+		System.out.print("문자열 입력");
+		String strIn = sc.nextLine();
+		System.out.print("검색할 문자열 입력: ");
+		String strSrch = sc.nextLine();
+		
+		for(int i = strIn.length()-strSrch.length(); i < strIn.length(); i++) {
+			if(strIn.charAt(i) != strSrch.charAt(i-(strIn.length()-strSrch.length()))) {
+				return false;
+			} else if(strIn.charAt(i) == strSrch.charAt(i-(strIn.length()-strSrch.length())))
+				i++;
+				if(strIn.charAt(i) == strSrch.charAt(i-(strIn.length()-strSrch.length()))) {
+					return true;
+				}
+		}
+		return false;
+	}
 	
 	
+//	10. 문자열 입력받고, 검색할 문자열을 입력받아 검색할 문자열이 어느 위치에 있는지 검색하는 indexOf(String str, String sub) 메소드 작성
+
 	
+	int indexOf() {
+		
+		Scanner sc = new Scanner(System.in);
+		System.out.print("문자열 입력 : ");
+		String strIn = sc.nextLine();
+		System.out.print("검색할 문자열 입력 : ");
+		String strSrch = sc.nextLine();
+		
+		for(int i = 0; i < strIn.length(); i++) {
+			if(strIn.charAt(i) == strSrch.charAt(i-()))
+		}
+		
+	
+	}
+
 
 }

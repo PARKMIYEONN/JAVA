@@ -12,6 +12,7 @@ public class StringUtilMain {
 		StringUtil munJa06 = new StringUtil();
 		StringUtil munJa07 = new StringUtil();
 		StringUtil munJa08 = new StringUtil();
+		StringUtil munJa09 = new StringUtil();
 		
 		
 
@@ -23,7 +24,7 @@ public class StringUtilMain {
 		System.out.print(munJa05.reverseString());
 		System.out.print(munJa06.toUpperString());
 		System.out.print(munJa07.toLowerString());
-		System.out.print(munJa08.compareTo());
+		System.out.print(munJa09.endsWith());
 		
 	}
 
