@@ -1,7 +1,7 @@
 package kr.ac.kopo.day10;
 
-import java.util.Arrays;
-import java.util.Scanner;
+
+
 
 public class StringUtil {
 
@@ -10,14 +10,9 @@ public class StringUtil {
 		// isUpperChar( char c ) 메소드를 작성하시오
 	
 	
-	boolean isUpperChar() {
-		Scanner sc = new Scanner(System.in);
-		System.out.print("문자를 입력 : ");
-		char c = sc.nextLine().charAt(0);
-
-		int num = (int) c;
-
-		if (num >= 65 && num <= 90) {
+	boolean isUpperChar(char c) {		//얘는 그저 판단하는 녀석이기 때문에 안에 입력받는 게 있으면 안됨.
+		
+		if (c >= 'A' && c <= 'Z') {
 			return true;
 		}
 		return false;
@@ -29,15 +24,11 @@ public class StringUtil {
 //	를 작성하시오
 	
 	
-	boolean isLowerChar() {
-
-		Scanner sc = new Scanner(System.in);
-		System.out.print("문자를 입력 : ");
-		char c = sc.nextLine().charAt(0);
+	boolean isLowerChar(char c) {
 
 		int num = (int) c; // c를 수로 바꿔줌
 
-		if (num >= 97 && num <= 122) {
+		if (num >= 'a' && num <= 'z') {
 			return true;
 		}
 		return false;
@@ -47,18 +38,12 @@ public class StringUtil {
 //3. 두개의 숫자를 입력받아 큰수를 반환하는 max( int i, int j) 메소드를 작성하시오	
 	
 	
-	int max() {
+	int max(int i, int j) {
 
-		Scanner sc = new Scanner(System.in);
-		System.out.print("첫번째 숫자 : ");
-		int num01 = sc.nextInt();
-		System.out.print("두번째 숫자 : ");
-		int num02 = sc.nextInt();
-
-		if (num01 > num02) {
-			return num01;
+		if (i > j) {
+			return i;
 		} else {
-			return num02;
+			return j;
 		}
 
 	}
@@ -66,107 +51,78 @@ public class StringUtil {
 //	4. 두개의 숫자를 입력받아 작은수를 반환하는 min(int i, int j) 메소드를 작성하시오	
 	
 	
-	int min() {
+	int min(int i, int j) {
 
-		Scanner sc = new Scanner(System.in);
-		System.out.print("첫번째 숫자 : ");
-		int num01 = sc.nextInt();
-		System.out.print("두번째 숫자 : ");
-		int num02 = sc.nextInt();
 
-		if (num01 > num02) {
-			return num02;
+		if (i < j) {
+			return i;
 		} else {
-			return num01;
+			return j;
 		}
 	}
 	
 	
 //	5. 문자열을 입력받아 거꾸로 변경하는 reverseString( String str ) 메소드를 작성하시오
 	
-	String reverseString() {
+	String reverseString(String str) {
 		
-		Scanner sc = new Scanner(System.in);
-		System.out.print("문자열 입력 : ");
-		String str = sc.nextLine();
-		
-		char[] ar = new char[str.length()];
-		
-		for(int i = 0; i < str.length(); i++) {
-			ar[i] = str.charAt(str.length()-1-i);
+		String revStr = "";
+		for(int i = str.length()-1; i >= 0; i--) {
+			revStr = revStr + str.charAt(i);
 		}
-	
-		return Arrays.toString(ar);
-			
+		return revStr;
 	}
 	
 
 //	6. 문자열을 입력받아 대문자로 변경하는 toUpperString( String str ) 메소드를 작성하시오	
 	
-	String toUpperString() {
+	String toUpperString(String str) {
 		
-		Scanner sc = new Scanner(System.in);
-		System.out.print("문자열 입력 : ");
-		String str = sc.nextLine();
-		
-		char[] ar = new char[str.length()];
-		int[] num = new int[str.length()];
-		
+		String upperstr = "";
 		for(int i = 0; i < str.length(); i++) {
-			ar[i] = str.charAt(i);
-			num[i] = (int)ar[i];
-			if(num[i] >= 97 && num[i] <= 122) {
-				num[i] = num[i]-32;
+			char c = str.charAt(i);
+			if(isLowerChar(c)) {
+				c = (char)(c-32);
 			}
-			ar[i] = (char)num[i];			
+			upperstr = upperstr + c;
 		}
 		
-		return Arrays.toString(ar);
+		return upperstr;
 				
 	}
 	
 	
 //	7. 문자열을 입력받아 소문자로 변경하는 toLowerString( String str ) 메소드를 작성하시오
 	
-	String toLowerString() {
-		
-		Scanner sc = new Scanner(System.in);
-		System.out.print("문자열 입력 : ");
-		String str = sc.nextLine();
-		
-		char[] ar = new char[str.length()];
-		int[] num = new int[str.length()];
-		
+	String toLowerString(String str) {
+		String lowerstr = "";
 		for(int i = 0; i < str.length(); i++) {
-			ar[i] = str.charAt(i);
-			num[i] = (int)ar[i];
-			if(num[i] >= 65 && num[i] <= 90) {
-				num[i] = num[i] + 32;
+			char c = str.charAt(i);
+			if(isUpperChar(c)) {
+				c = (char)(c + 32);
 			}
-			ar[i] = (char)num[i];
+			lowerstr = lowerstr + c;
 		}
-		return Arrays.toString(ar);
+		return lowerstr;
 	}
 	
 	
 //	8. 두개의 문자열을 입력받아 문자열 크기를 비교하는 compareTo(String str, String str2) 메소드를 작성하시오.
 	
-	int compareTo() {
+	int compareTo(String str, String str2) {
 		
-		Scanner sc = new Scanner(System.in);
-		System.out.print("첫번째 문자열 입력 : ");
-		String str01 = sc.nextLine();
-		System.out.print("두번째 문자열 입력 : ");
-		String str02 = sc.nextLine();
-		
-		for(int i = 0; i <= str01.length(); i++) {
-			if(str01.charAt(i) != str02.charAt(i)) {	
-				return str01.charAt(i)-str02.charAt(i);
-			} 
-			
+		int length = str.length() < str2.length() ? str.length() : str2.length();
+		for(int i = 0; i < length; i++) {
+			if(str.charAt(i) != str2.charAt(i)) {
+				return str.charAt(i)-str2.charAt(i);
+			}
 		}
-		return 0;
-		
+		if(str.length() == str2.length()) {
+			return 0;
+		} else if(str.length() == length) {
+			return -str2.length();
+		}
+		return str.length();
 	}
 
 		
@@ -176,22 +132,18 @@ public class StringUtil {
 //    검색할 문자열 입력 : ld
 //    ld로 끝나는지 여부 판단 : true		
 	
-	boolean endsWith() {
+	boolean endsWith(String str, String sub) {
+
+		String revStr = reverseString(str);
+		String revSub = reverseString(sub);
 		
-		Scanner sc = new Scanner(System.in);
-		System.out.print("문자열 입력");
-		String strIn = sc.nextLine();
-		System.out.print("검색할 문자열 입력: ");
-		String strSrch = sc.nextLine();
-		
-		for(int i = strIn.length()-strSrch.length(); i < strIn.length(); i++) {
-			if(strIn.charAt(i) != strSrch.charAt(i-(strIn.length()-strSrch.length()))) {
-				return false;
-			} else if(strIn.charAt(i) == strSrch.charAt(i-(strIn.length()-strSrch.length())))
-				i++;
-				if(strIn.charAt(i) == strSrch.charAt(i-(strIn.length()-strSrch.length()))) {
-					return true;
-				}
+		for(int i = 0; i < revSub.length(); i++) {
+			char c1 = revStr.charAt(i);
+			char c2 = revSub.charAt(i);
+			
+			if(c1 == c2) {
+				return true;
+			}
 		}
 		return false;
 	}
@@ -199,21 +151,36 @@ public class StringUtil {
 	
 //	10. 문자열 입력받고, 검색할 문자열을 입력받아 검색할 문자열이 어느 위치에 있는지 검색하는 indexOf(String str, String sub) 메소드 작성
 
+
 	
-	int indexOf() {
+// 230321 //1. 문자열의 내용을 비교하여 입력받는 char c값과 동일한 char개수를 리턴
+	
+	public static int checkChar(String strData, char ch) {
 		
-		Scanner sc = new Scanner(System.in);
-		System.out.print("문자열 입력 : ");
-		String strIn = sc.nextLine();
-		System.out.print("검색할 문자열 입력 : ");
-		String strSrch = sc.nextLine();
-		
-		for(int i = 0; i < strIn.length(); i++) {
-			if(strIn.charAt(i) == strSrch.charAt(i-()))
+		int a = 0;
+		for(int i = 0; i < strData.length(); i++) {
+			if(strData.charAt(i) == ch) {
+				a = a+1;
+			}
 		}
-		
-	
+		return a;
 	}
+	
+	
+//	2. 특정 문자 제거
+	
+	public static String removeChar(String oriStr, char delChar) {
+		
+		String str = "";
+		for(int i = 0; i < oriStr.length(); i++) {
+			if(oriStr.charAt(i) != delChar) {
+				 str = str + oriStr.charAt(i); 
+			}
+		
+		}
+		return str;
+	}
+	
 
 
 }
