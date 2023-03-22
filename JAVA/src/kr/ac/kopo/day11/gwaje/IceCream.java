@@ -24,7 +24,7 @@ public class IceCream {
 		System.out.println("번호\t아이스크림명\t아이스크림가격");
 		for(int i = 0; i < iC; i++) {
 			total = total + icePrice[i];
-		System.out.printf("%d\t%s\t\t%d\n", i+1, iceName[i], icePrice[i]);
+			System.out.printf("%d\t%s\t\t%d\n", i+1, iceName[i], icePrice[i]);
 		}
 		System.out.printf("총합 : %d원", total);
 	}

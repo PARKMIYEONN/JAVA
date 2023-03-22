@@ -18,7 +18,7 @@ public class HomeworkMainnana {
 		//StringUtil num = new StringUtil();
 		//System.out.println(num.endsWith(strIn, strSrch));
 		StringUtil num = new StringUtil();
-		System.out.println(num.removeChar(strIn, strSrch));
+		System.out.println(StringUtil.checkChar(strIn, strSrch));
 	
 	}
 

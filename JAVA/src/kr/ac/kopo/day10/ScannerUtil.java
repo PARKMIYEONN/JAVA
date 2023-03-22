@@ -11,22 +11,23 @@ public class ScannerUtil {
 	
 	Scanner sc; // = new Scanner(System.in); 또는
 	
-	ScannerUtil(){
+	public ScannerUtil(){
 		sc = new Scanner(System.in);
 	}
 	
-	char nextChar(String msg) {
+	public char nextChar(String msg) {
 		System.out.print(msg);
 		return sc.nextLine().charAt(0);
 	}
 	
-	int nextInt(String msg) {
+	public int nextInt(String msg) {
 		System.out.print(msg);
 		int num = sc.nextInt();
+		sc.nextLine(); //정수 사용 시 버퍼 내 엔터까지 전부 비워주기 위해 . 
 		return num;
 	}
 	
-	String nextString(String msg) {
+	public String nextString(String msg) {
 		System.out.print(msg);
 		String str = sc.nextLine();
 		return str;
