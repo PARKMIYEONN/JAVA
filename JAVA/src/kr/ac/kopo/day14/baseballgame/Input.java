@@ -8,7 +8,7 @@ public class Input {
 		
 		ScannerUtil scan = new ScannerUtil();
 		
-		int seJari = scan.nextInt("중복되지 않는3자리 수를 입력하세요 : ");
+		int seJari = scan.nextInt("중복되지 않는 3자리 수를 입력하세요 : ");
 		
 		return seJari;
 		

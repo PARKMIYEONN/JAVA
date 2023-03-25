@@ -10,7 +10,10 @@ public class Byeol07 {
 		
 		System.out.print("행 수 입력 : ");
 		int haeng = sc.nextInt();
-	
+		
+		System.out.println();
+		
+		
 		for(int i = 1; i <= haeng; i++) {
 			for(int j = 1; j <= haeng+1-i; j++) {
 				System.out.print("*");
