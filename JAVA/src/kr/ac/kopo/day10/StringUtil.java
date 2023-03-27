@@ -150,21 +150,33 @@ public class StringUtil {
 	
 	
 //	10. 문자열 입력받고, 검색할 문자열을 입력받아 검색할 문자열이 어느 위치에 있는지 검색하는 indexOf(String str, String sub) 메소드 작성
-/*
+
 	 int indexOf(String str, String sub) {
+		 int location = -1;
+		 int cnt = 0;
 		
-		for(int i = 0; i < str.length(); i++) {
-			char c = str.charAt(i);
-		}
 		for(int i = 0; i < sub.length(); i++) {
-			char c2 = sub.charAt(i);
-			if(c == c2) {
-				
+			for(int j = 0; j <str.length(); j++) {
+				if(sub.charAt(i) == str.charAt(j)) {
+					cnt++;
+					i++; //여기서 왜 또 i++을 하게 되나요??
+				}
+				if(sub.length() == cnt) {
+					location = j-(sub.length()-1);	//이 값은 어떻게 나오게 되나요??
+					return location;
+				}
 			}
+			
 		}
+		return location;
+	
+		
+				
+			
+		
 		
 	
-	}*/
+	}
 	
 // 230321 //1. 문자열의 내용을 비교하여 입력받는 char c값과 동일한 char개수를 리턴
 	
