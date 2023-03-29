@@ -1,6 +1,9 @@
 package kr.ac.kopo.day16.hwlotto;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
+import java.util.Random;
 
 public class LottoView {
 
@@ -30,13 +33,13 @@ public class LottoView {
 			set.add(lot[i]);
 			
 		}   
-		if(set.size() < 6) {
+		while(set.size() < 6) {
 			set.add(r.nextInt(44) + 1);
 		}
 		obj = set.toArray();
 		return obj;
 	}
-	*/
+	
 	
 	
 	//		실패.....
@@ -108,7 +111,41 @@ public class LottoView {
 				
 	}
 */	
+	/* 
+	private int[] getLotto() {
+		Random r = new Random();
+		int[] num = new int[6];
+		
+		for(int i = 0; i < num.length; i++) {
+			num[i] = r.nextInt(45)+1;
+			for(int j = 0; j < i; j++) {
+				if(num[j] == num[i]) {
+					i--;
+				}
+			}
+		}
+		return num;
+	}
+	*/
 	
+	
+	private int[] getLotto() {
+		Random r = new Random();
+		int[] num = new int[6];
+		List<Integer> list = new ArrayList<Integer>();
+		
+		while(list.size() < 6) {
+			int nm = r.nextInt(44)+1;
+			if(!list.contains(nm)) {
+				list.add(nm);
+			}
+		}
+		Object[] obj = list.toArray();
+		for(int i = 0; i < num.length; i++) {
+			num[i] = (Integer)obj[i];
+		}
+		return num;
+	}
 }
 
 

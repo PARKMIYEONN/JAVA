@@ -1,4 +1,4 @@
-package kr.ac.kopo.day16.hwlotto
+package kr.ac.kopo.day17.lotto05
 ;
 
 /*
