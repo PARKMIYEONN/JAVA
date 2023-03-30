@@ -12,17 +12,18 @@ public class ScissorsRockPaper implements Game{
 	public int startGame(int you) {
 		
 		Random r = new Random();
-		int me = r.nextInt(2) + 1;
+		int me = r.nextInt(3) + 1;
 		
 		if(you > me) {
 			System.out.println("You win");
 			return 1;
 		} else if(you < me){
 			System.out.println("You lose");
+			return 0;
 		} else {
 			System.out.println("비겼습니다");
 		}
-		return 0;
+		return -1;
 	}
 
 }
