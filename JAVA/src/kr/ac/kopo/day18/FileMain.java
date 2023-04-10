@@ -1,12 +1,14 @@
 package kr.ac.kopo.day18;
 
 import java.io.File;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class FileMain {
 	
 	public static void main(String[] args) {
 		
-		File dirObj = new File("iotest");
+		/*File dirObj = new File("iotest");
 		
 		System.out.println("---------------------");
 		System.out.println(dirObj.getPath() + "폴더");	//iotest폴더 경로니까 걔만보임
@@ -16,8 +18,8 @@ public class FileMain {
 			System.out.println(data);
 		}
 		System.out.println("---------------------");
+		*/
 		
-		/*
 		
 		File dirObj = new File("iotest/새폴더/강아지");
 		
@@ -27,7 +29,7 @@ public class FileMain {
 		System.out.println(dirObj.isDirectory() ? "디렉토리입니다" : "디렉토리가 아닙니다"); //폴더인지 아닌지
 		
 		
-		/*
+		
 		File fileObj = new File("iotest/a.txt");
 	
 		System.out.println(fileObj.exists() ? "존재합니다" : "잘못된 이름입니다");
@@ -52,7 +54,7 @@ public class FileMain {
 		SimpleDateFormat sdf = new SimpleDateFormat(pattern);
 		sdf.format(new Date(lastTime));
 		System.out.println("마지막 수정날짜 : " + sdf.format(new Date(lastTime)));
-		*/
+		
 	}
 
 }

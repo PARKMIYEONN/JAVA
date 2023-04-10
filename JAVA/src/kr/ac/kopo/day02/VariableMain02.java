@@ -21,8 +21,7 @@ public class VariableMain02 {
 		
 		
 		System.out.println("num3 : " + num3);
-		
-		System.out.println(12 + (int)12.34);
+
 		System.out.println(/*(double)*/12 + 12.34); //묵시적 형변환 자동으로 발생
 		
 	}
