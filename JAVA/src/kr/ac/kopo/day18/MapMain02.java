@@ -49,8 +49,8 @@ class Employee{
 	@Override
 	public boolean equals(Object obj) {				//이거 시험에 나온다!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 		
-		Employee e = (Employee)obj;
-		if(this.name.equals(e.name) && this.phone.equals(e.phone)) {
+		Employee e2 = (Employee)obj;
+		if(this.name.equals(e2.name) && this.phone.equals(e2.phone)) {
 			return true;
 		}
 		return false;

@@ -61,7 +61,7 @@ public class ListMain {
 		}
 		
 		for(String str : list) {
-			if(str.equals("three")) {		//문자열이 같은지 보려면 이퀄스를 사용해야 함 참조변수라 다른 공간에 저장되기 때문
+			if(str.equals("five")) {		//문자열이 같은지 보려면 이퀄스를 사용해야 함 참조변수라 다른 공간에 저장되기 때문
 				System.out.println(str);
 				
 			}
